@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/justdansmith/spiced/spec/spiced.schema.json",
+  "title": "SPICED Record",
+  "description": "The machine-readable contract for a deal diagnosed against SPICED. Five namespaces, each populated by one or more skills. The field names are the protocol.",
+  "type": "object",
+  "properties": {
+    "situation": {
+      "type": "object",
+      "description": "S namespace. Account, persona, context.",
+      "properties": {
+        "captureIndex": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "keyMoments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pain": {
+      "type": "object",
+      "description": "P namespace. Problems, risks, the why.",
+      "properties": {
+        "discoveryQualityScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "risksSurfaced": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "impact": {
+      "type": "object",
+      "description": "I namespace. Rational and emotional recurring value.",
+      "properties": {
+        "rationalImpact": {
+          "type": "string"
+        },
+        "emotionalImpact": {
+          "type": "string"
+        },
+        "quantified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "criticalEvent": {
+      "type": "object",
+      "description": "CE namespace. Impact under a time constraint.",
+      "properties": {
+        "exists": {
+          "type": "boolean"
+        },
+        "date": {
+          "type": "string"
+        },
+        "consequence": {
+          "type": "string"
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "description": "D namespace. Process, criteria, makers, threads. Multi-threading lives here.",
+      "properties": {
+        "coverageIndex": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "rolesPresent": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rolesMissing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "threadCount": {
+          "type": "integer"
+        },
+        "singleThreadedRisk": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "required": [
+    "situation",
+    "pain",
+    "impact",
+    "criticalEvent",
+    "decision"
+  ]
+}

@@ -1,0 +1,20 @@
+# Reference example only. No real customer data lives in this public repo.
+name: example-acme
+company: "Acme (illustrative)"
+description: Reference project showing how a customer selects skills and agents and sets where compute and data live.
+deploys:
+  agents:
+    - deal-health-agent
+    - coaching-agent
+  skills:
+    - decision-coverage
+    - question-based-selling
+    - situation-diagnosis
+    - trigger-event-management
+runtime:
+  # The app is hosted by the provider; the AI compute runs on the customer's own stack.
+  compute: customer   # the customer's AI (for example Claude Enterprise)
+  data_sources:
+    calls: <customer conversation intelligence>
+    crm: <customer CRM>
+  human_in_the_loop: true
