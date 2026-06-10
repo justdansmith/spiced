@@ -1,7 +1,7 @@
 {
   "standard": "Anthropic Agent Skills",
   "protocol": "SPICED",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "namespaces": [
     "S",
     "P",
@@ -10,7 +10,7 @@
     "D",
     "X"
   ],
-  "skill_count": 27,
+  "skill_count": 30,
   "skills": [
     {
       "slug": "account-and-context-research",
@@ -335,6 +335,46 @@
       "data_source": "mixed",
       "ai_buildability": "mod",
       "defensibility": "canon"
+    },
+    {
+      "slug": "realized-impact-tracking",
+      "name": "Realized-Impact Tracking",
+      "namespace": "I",
+      "namespace_name": "Impact",
+      "status": "active",
+      "priority": 6,
+      "sub_skills": 4,
+      "data_source": "mixed",
+      "ai_buildability": "heavy",
+      "defensibility": "canon",
+      "added_by": "Council 2026-06-09"
+    },
+    {
+      "slug": "renewal-risk-diagnosis",
+      "name": "Renewal-Risk Diagnosis",
+      "namespace": "CE",
+      "namespace_name": "Critical Event",
+      "status": "active",
+      "priority": 7,
+      "sub_skills": 5,
+      "data_source": "CRM",
+      "ai_buildability": "mod",
+      "defensibility": "canon",
+      "added_by": "Council 2026-06-09"
+    },
+    {
+      "slug": "adoption-and-health-monitoring",
+      "name": "Adoption & Health Monitoring",
+      "namespace": "X",
+      "namespace_name": "Cross-Cutting",
+      "status": "planned",
+      "priority": null,
+      "sub_skills": 4,
+      "data_source": "CRM",
+      "ai_buildability": "heavy",
+      "defensibility": "canon",
+      "added_by": "Council 2026-06-09"
     }
-  ]
+  ],
+  "council_review": "2026-06-09: Impact split into projected/realized; added renewal-risk-diagnosis, realized-impact-tracking, adoption-and-health-monitoring; Trigger-Event reframed as the cross-Bowtie re-fire engine."
 }

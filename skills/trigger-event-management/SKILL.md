@@ -36,3 +36,6 @@ Build fourth, in parallel with coaching on a second track. Reuses the CRM read l
 
 ## SPICED contract
 This skill reads and writes the `CE` fields defined in [`/spec/spiced.schema.json`](../../spec/spiced.schema.json). Any agent in the stack can consume its output because the field names are the contract.
+
+## Cross-Bowtie role (Council 2026-06-09)
+Reframed as the **cross-Bowtie re-fire engine**: this skill re-runs the right skill at the right lifecycle moment (renewal, expansion window, health drop), not just a renewal queue. It is the composition spine that lets the library span the full Bowtie without new monolith skills.

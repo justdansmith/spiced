@@ -41,16 +41,39 @@
     },
     "impact": {
       "type": "object",
-      "description": "I namespace. Rational and emotional recurring value.",
+      "description": "I namespace. Splits into projected (pre-sales promise) and realized (post-sales evidenced value).",
       "properties": {
-        "rationalImpact": {
-          "type": "string"
+        "projected": {
+          "type": "object",
+          "description": "Pre-sales, transcript-derived.",
+          "properties": {
+            "rationalImpact": {
+              "type": "string"
+            },
+            "emotionalImpact": {
+              "type": "string"
+            },
+            "quantified": {
+              "type": "boolean"
+            }
+          }
         },
-        "emotionalImpact": {
-          "type": "string"
-        },
-        "quantified": {
-          "type": "boolean"
+        "realized": {
+          "type": "object",
+          "description": "Post-sales, telemetry and CRM-derived.",
+          "properties": {
+            "firstValueDate": {
+              "type": "string"
+            },
+            "realizedValue": {
+              "type": "string"
+            },
+            "recurringImpactScore": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
         }
       }
     },
@@ -95,6 +118,26 @@
         },
         "singleThreadedRisk": {
           "type": "boolean"
+        }
+      }
+    },
+    "renewalRisk": {
+      "type": "object",
+      "description": "Cross-cutting. Renewal risk, distinct from renewal timing. Where NRR lives.",
+      "properties": {
+        "riskIndex": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommendedPlay": {
+          "type": "string"
         }
       }
     }
